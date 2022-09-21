@@ -1,4 +1,7 @@
 
+from pickle import DICT
+
+
 print("Bienvenido a las pruebas de:\nJESUS ALONSO")
 
 ############# TYPOS DE DATOS ######################
@@ -148,6 +151,65 @@ print(my_set3)
 
 # hace parte my_set3 sus elementos están en set?
 print(my_set3.issubset(my_set))
+
+################## DICTIONARIOS ####################
+# De lo mejor, de lo mejor en python
+
+my_dict = {"Jesus": 1975, "Maria": 1976, "José": 1977}
+print(my_dict)
+
+# Operaciones: (Digamos, nombres y año de nacimiento)
+# Dame el valor de acuerdo al la key
+print("Cuál es el año de nacimiento de JESUS:")
+print(my_dict["Jesus"])
+
+# Dejame ver todas las keys
+print("Todas las llaves contenidas en el dict:")
+print(my_dict.keys())
+
+# Ahora los valores
+print("Dejame ver todos los valores en el dict:")
+print(my_dict.values())
+
+
+################## COMPARISON OPERATORADORES
+a = 1
+b = 3
+if a == b:
+    print(a, "es igual a ", b)
+else:
+    print(a, "NO es igual a ", b)
+
+# ahora con otro operador y otro statment adicional
+if a > b:
+    print(a, "es mayor que ", b)
+elif b > a and a < b:
+    print(b, "es mayor que ", a, " y ", a, " es menor que ", b)
+elif a < b:
+    print(a, "es menor que ", b)
+else:
+    print( a, "es igual a ", b)
+    
+###################### CICLOS, LOOPS ##########################
+# usaremos las listas anteriormente definidas
+# imprimeindo los elementos de una lista con for 
+for cValue in my_list:
+    print("imprimendo cada elemento", cValue)
+
+# usando el argumento de la función enumerate
+for i, cValue in enumerate(my_list):
+    print("Este es el índice: ", i)
+    print("Este es el valor usando indice: ", my_list[i])
+    print("Este es el valor directo: ", cValue)
+
+
+
+
+
+
+
+
+
 
 
 
