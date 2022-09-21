@@ -202,21 +202,13 @@ for i, cValue in enumerate(my_list):
     print("Este es el valor usando indice: ", my_list[i])
     print("Este es el valor directo: ", cValue)
 
+# usando el while como loop
+# i contendrá el número de elementos
+i = len(my_list) - 1  # Restar 1 pues arranca el indice en 0, no en 1
 
+# ordenando la lista antes de imprimirla con la función sort
+my_list.sort()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+while i > 0:
+    print("Imprimiendo con while lista de elementos: ", my_list[i])
+    i-=1
