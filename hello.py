@@ -124,6 +124,32 @@ my_list3 = ["a","b","c"]
 print(my_list3[1:])
 
 ############## SETS ####################
+# Puedo convertir listas en SETS, y puedo realizar operaciones
+# de union, intersección, y preguntar si es un subset de un set
+# o no, así también, los SETS, no pueden ser modificados
+# y tampoco habrán duplicados, aún así defina mismos elementos
+# uso {} llaves para definir sets, parentesis para tuplas y
+# [] para listas, remindder :) 
+
+my_set = {"1","2","3","1","2","4"}
+print(my_set)
+
+# Convirtiendo my_list2 anterior en SET
+my_set2 = set(my_list2)
+print(my_set2)
+
+# ya que tenemos números en los dos sets, hagamos intersercción
+my_set3 = my_set & my_set2
+print(my_set3)
+
+# unión también, recuerda, solo quedarán los no repetidos
+my_set3.union(my_set2)
+print(my_set3)
+
+# hace parte my_set3 sus elementos están en set?
+print(my_set3.issubset(my_set))
+
+
 
 
 
