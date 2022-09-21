@@ -69,6 +69,10 @@ except:
     print("asignando un valor a un tuple, generará un error")
 
 
+# ordenando los elementos de un tuple
+print("Tuple original:", My_tuple_1)
+print("Ahora, ordenada:")
+print(sorted(My_tuple_1))
 
 
 
