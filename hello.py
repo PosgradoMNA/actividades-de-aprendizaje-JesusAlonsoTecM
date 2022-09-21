@@ -74,8 +74,26 @@ print("Tuple original:", My_tuple_1)
 print("Ahora, ordenada:")
 print(sorted(My_tuple_1))
 
+# Listas
+# En las listas se usan los corchetes cerrados [] para su definición
+# El acceso a los elementos es exactamente igual como lo hacíamos
+# con las tuples, sin embargo, tenemos un par de comandos diferentes
+my_list = ['JesusAlonso', 1975, "MNA", 2022]
 
+# Puedo usar la misma operación que las tuplas para agregar
+# más elementos, pero si la coma al final como en las tuplas, recuerdan?
+my_list = my_list + ["QuintoElementoAdicionado"]
+print(my_list)
 
+# Otra forma es con el comando extend si deseo adicionar más
+# elementos al mismo tiempo
+my_list.extend(["SextoElemento", "SeptimoElemento"])
+print(my_list)
+
+# O en su defecto con el comando Append, pero solo adicionará
+# un elemento más, ojo que puede adicionar una lista interna,
+my_list.append(["Octavo1","Octavo2"])
+print(my_list)
 
 
 
