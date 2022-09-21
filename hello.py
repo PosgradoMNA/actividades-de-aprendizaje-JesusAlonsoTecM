@@ -1,6 +1,3 @@
-# impresión de prueba
-from ast import Try
-
 
 print("Bienvenido a las pruebas de:\nJESUS ALONSO")
 
