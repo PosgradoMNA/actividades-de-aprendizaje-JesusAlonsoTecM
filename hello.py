@@ -1,6 +1,7 @@
 
 print("Bienvenido a las pruebas de:\nJESUS ALONSO")
 
+############# TYPOS DE DATOS ######################
 # enteros
 var = 1
 print("Valor Entero: ", var)
@@ -16,19 +17,24 @@ var = True
 print("Valor Booleano: ", var)
 print(type(var))
 
+############### OPERADORES ########################
 # variables -> multiplicación prioridad
 var = 5 + 5 + 5 * 2
 print("Prioridad MULT [5 + 5 + 5 * 2] = ", var)
 
+################ CADENAS, STRINGS ###########################
 # Encontrando los primeros 4 caracteres
 var = "abcdefghijkl"
 print("En el string", var, "los primeros 4 caracteres son: ", var[0:4])
 print("Cadena original min:", var, "cadena convertida a may UPPER()", var.upper())
 
+################# VARIABLES ###########################
 # Concatenar, strings
 var = var + "-mnopqrstuvwxyz"
 print("Todo el abcedario sumando dos strings en var: ", var)
 
+
+################### TUPLAS ##########################
 # Hablemos ahora de Tuples
 # se inicializan usando los paréntesis ()
 My_tuple_1 = (10,9,6,5,10,8,9,6,2)
@@ -74,7 +80,7 @@ print("Tuple original:", My_tuple_1)
 print("Ahora, ordenada:")
 print(sorted(My_tuple_1))
 
-# Listas
+################# LISTAS ######################
 # En las listas se usan los corchetes cerrados [] para su definición
 # El acceso a los elementos es exactamente igual como lo hacíamos
 # con las tuples, sin embargo, tenemos un par de comandos diferentes
@@ -95,10 +101,29 @@ print(my_list)
 my_list.append(["Octavo1","Octavo2"])
 print(my_list)
 
+#### ERROR EN EL CURSO
+#### POR CIERTO, Hay un error en la presentación del slide 26, 27
+#### se refiere a que puede tomar una TUPLE 
+#### y asignar un nuevo elemento a[0] = "Nuevo", es un error
+#### en el título, pues esto funciona solo con LISTAS
 
+# esto solo funciona con listas
+my_list[0] = "MaverickAlonso"
+print(my_list)
 
+my_string = "1,2,3,4,5,6,7,8,9,10"
+print(my_string)
 
+# Fantastico el uso del comando split para convertir en elementos
+# individuales}
+my_list2 = my_string.split(",")
+print(my_list2)
 
+# obvie el elemento 1 y muestre los demas.
+my_list3 = ["a","b","c"]
+print(my_list3[1:])
+
+############## SETS ####################
 
 
 
