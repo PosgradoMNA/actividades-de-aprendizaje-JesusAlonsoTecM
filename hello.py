@@ -1,18 +1,145 @@
 
-
 print("########################################")
 print("Bienvenido PYTHON FOR DATA SCIENCE (IBM)")
 print("ALUMNO: JESUS ESTEINER ALONSO")
 print("CODIGO: A1793554")
 print("########################################")
-print("MODULO 1, 2, 3 - Ya CALIFICADOSchecados")
-print("MODULO 4:  Desarrollo al ejecutar y revisar el archivo")
+print("MODULO 1, 2, 3, 4 - Ya CALIFICADOS checados")
+print("MODULO 5:  Desarrollo al ejecutar y revisar el archivo")
+
 
 # checando modulo
-modulo = 4
+modulo = 5
 
-##################### MODULO 4 - READING FILES WITH OPEN ############
-if modulo >= 4:
+if modulo >= 5:
+    ##################### MODULO 5 - EVIDENCIA DE CURSO ################
+    print("Modulo 5 - Evidencia")
+
+    # Extraemos la librería numpy
+    import numpy as np
+
+    # Creeemos un arreglo 
+    a = np.array([0,1,2,3,4])
+
+    # Fomrato para acceder al arreglo usando numpy 
+    # guardando en la variable a
+    print("Indice 1:", a[0])
+    print("Indice 2:", a[1])
+
+    # Número de elementos del arreglo con numpy
+    print("Número de elementos: ", a.size)
+
+    # Podemos cambiar un elemento del arreglo direcctamente
+    a[0] = 100
+    print("Indice 1 con valor cambiado:", a[0])
+
+    # Extraer ahora una parte del arreglo y generar uno nuevo
+    b = a[1:4]
+    print("Tenemos el arreglo original")
+    print(a)
+    print("Del cual extraimos tres datos:")
+    print(b)
+    
+    ################ OPERACIONES CON LOS VECTORES NUMPY ##############
+    # Tomemos los valores del primero y multiplicamos por 2 
+    # todos los componentes.
+    c = a*2
+    print("Valores originales arreglo numpy a:", a)
+    print("Valores guardados en variable c, a*2:", c)
+
+    ############## FUNCIONES CON NUMPY ######################
+    print("Promedio de datos del arreglo a:", a.mean())
+    print("Máximo valor en el arreglo a:", a.max())
+    print("Minimo valor en el arreglo a:", a.min())
+
+    # funcion linspace numpy
+    x = np.linspace(0, 2*np.pi,100)
+    y = np.sin(x)
+
+    # libreria en python para poder graficar 
+    import matplotlib.pyplot as plt
+
+    # Dibuje el seno de los datos en x
+    plt.plot(x,y)
+
+    # multiplicar arreglos
+    d = np.array([1,-1])*np.array([1,1])
+    print(d)
+
+    # producto de dos arreglos
+    d = np.dot(np.array([1,-1]),np.array([1,1]))
+    print(d)
+
+    ##################### MULTIDIMENSIONAL ARRAYS ##################
+    a = [[1,2,3],[4,5,6],[7,8,9]]
+    b = np.array(a)
+
+    print("Arreglo 3x3 creado:")
+    print(a)
+    print("Dimension del arreglo anterior:",b.shape)
+
+    #################### MULTIPLICACION DE MATRICES ###############
+    A = np.array([[1,2],[3,4],[5,6],[7,8]])
+    B = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+    try:
+        print(np.dot(B,A))
+    except:
+        print("ArrEglo A: [[1,2],[3,4],[5,6],[7,8]]")
+        print("Arreglo B: [[1,2,3],[4,5,6],[7,8,9]]")
+        print("Se intentó ejecutar esto: print(np.dot(B,A))")
+        print("Error ocurrido pues no tienen la misma dimensión los arreglos")
+
+
+    ######################## API interfaces.
+    # Utilizando librerias API con PANDAS
+    import pandas as pd
+
+    dict_ = {'Nombres': ["JESUS", "ESTEINER", "ALONSO"],\
+             'Edades': [37, 45, 67]}
+
+    df = pd.DataFrame(dict_)
+
+    # usando pandas podemos obtener los datos del dict
+    # con la siguiente función
+    print(df.head())
+
+    ######################## REST Apis
+    # Usemos un servidor de NBA usado en el ejemplo
+    #
+    # !IMPORTANTE! debe instalar desde comandos esta libreria
+    # pues no se encuentre an el estándar de PYTHON
+    #
+    # pip install nba_api
+    from nba_api.stats.static import teams
+    nba_teams = teams.get_teams()
+    
+    # Datos recibidos del REST API
+    print("Datos recibidos del API con formato JSON")
+    print(nba_teams)
+
+    # Para poder ver los datos ordenados a través de un frame
+    # debemos hacer una función para transformar un JSON a DICT
+    def one_dict(list_dict):
+        keys=list_dict[0].keys()
+        out_dict={key:[] for key in keys}
+
+        for dict_ in list_dict:
+            for key, value in dict_.items():
+                out_dict[key].append(value)
+        return out_dict
+
+    # Llamemos la función y convirtamos el JSON en DICTIONARIO
+    dict_nba_team=one_dict(nba_teams)
+    df_teams=pd.DataFrame(dict_nba_team)
+    
+    # Imprimamos la lista recibida en dataframe ordenado 
+    print(df_teams.head())
+
+
+elif modulo >= 4:
+
+    ##################### MODULO 4 - READING FILES WITH OPEN ############
 
     # La apertura de un archivo puede realizar con el comando 
     # open, pero este puede referirse de una mejor manera como 
