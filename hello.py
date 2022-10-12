@@ -6,17 +6,44 @@ print("CODIGO: A1793554")
 print("########################################")
 print("MODULO 1, 2, 3, 4 - Ya CALIFICADOS checados")
 print("MODULO 5:  Desarrollo al ejecutar y revisar el archivo")
+print("MODULO 6: DATA ANALYSIS WITH PYTHON")
 
+# checando modulo DATA ANALYSIS WITH PYTHON
+# Le llamaré modulo 6
 
-# checando modulo
-modulo = 5
+# Extraemos la librería numpy
+import numpy as np
+import pandas as pd
+import os
 
-if modulo >= 5:
+modulo = 6
+if modulo >= 6:
+    # Importando Data 
+    # # Cargamos el archivo que está en la siguiente carpeta de Google-Colab:
+    misdatos = pd.read_csv("cereals.csv")
+    
+    # evidencia de manejo de datos para DATA SCIENCES
+
+    ################### DETALLES DE MIS DATOS LEIDOS
+    print(misdatos.describe())
+    print(misdatos.info())
+    print(misdatos.describe(include='all'))
+
+    #################### CREANDO MI DATAFRAME
+    df = pd.DataFrame(misdatos)
+    print(df)
+
+    #################### LIMPIANDO MIS DATOS
+    df_cleaned = df.dropna(axis=0, inplace=True)
+    print(df_cleaned)
+
+    input("enter")
+
+elif modulo >= 5:
     ##################### MODULO 5 - EVIDENCIA DE CURSO ################
     print("Modulo 5 - Evidencia")
 
-    # Extraemos la librería numpy
-    import numpy as np
+
 
     # Creeemos un arreglo 
     a = np.array([0,1,2,3,4])
