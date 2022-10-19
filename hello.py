@@ -6,7 +6,8 @@ print("CODIGO: A1793554")
 print("########################################")
 print("MODULO 1, 2, 3, 4 - Ya CALIFICADOS checados")
 print("MODULO 5:  Desarrollo al ejecutar y revisar el archivo")
-print("MODULO 6: DATA ANALYSIS WITH PYTHON")
+print("MODULO 1: IBM Semana 4")
+print("MODULO 2 IBM: Semana 5: Data Analysis with Python (IBM)")
 
 # checando modulo DATA ANALYSIS WITH PYTHON
 # Le llamaré modulo 6
