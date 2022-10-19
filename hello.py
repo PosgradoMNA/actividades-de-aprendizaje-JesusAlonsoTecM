@@ -16,7 +16,13 @@ import numpy as np
 import pandas as pd
 import os
 
+### 
+### DATA PROCESSING MODULO 2 IBM 
+###
+### Semana 5: Data Analysis with Python (IBM)
+###
 modulo = 6
+
 if modulo >= 6:
     # Importando Data 
     # # Cargamos el archivo que está en la siguiente carpeta de Google-Colab:
@@ -37,7 +43,43 @@ if modulo >= 6:
     df_cleaned = df.dropna(axis=0, inplace=True)
     print(df_cleaned)
 
-    input("enter")
+    ################### REPLACE DATOS NORMALIZACION DE DATOS
+    ### Reemplazando los valores nulos con el promedio
+    ### de los datos.
+    mean = df["protein"].mean()
+    df["protein"].replace(np.nan,mean)
+    
+    ################# DATA FORMATTING, APPYLING CALCULATION TO AN ENTIRE COLUMN
+    # Conviertiendo o cambiando el tipo de datos del 
+    # un dato, por ejemplo de float a int
+    df["protein"] = df['protein'].astype("int")
+    print(df["protein"])
+    
+    ################ DATA NORMALIZACION
+    # Por ejemplo podemos tomar y dividir con uno de los métodos
+    # MAX
+    df['calories'] = df["calories"]/df['calories'].max()
+    print(df["calories"])
+
+    ############## BINNING,CONVERT NUMERIC INTO CATEGORICAL
+    # Generemos un bins
+    bins = np.linspace(min(df['calories']), max(df['calories']),4)
+    print(bins)
+
+    group_names = ["Low", "Medium", "High"]
+
+    df['calories-binned'] = pd.cut(df['calories'], bins, labels=group_names, include_lowest=True)
+    print(df["calories-binned"])
+
+    ########### CATEGORICAL VARIABLES
+    # Usaremos la columna anteriormente creada
+    # calories-binned para pasarla a variables 0 1
+    pd.get_dummies(df["calories-binned"])
+    print(df)
+
+    ### after standirized, std = 1
+    print(df['calories'].std())
+
 
 elif modulo >= 5:
     ##################### MODULO 5 - EVIDENCIA DE CURSO ################
