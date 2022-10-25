@@ -6,8 +6,11 @@ print("CODIGO: A1793554")
 print("########################################")
 print("MODULO 1, 2, 3, 4 - Ya CALIFICADOS checados")
 print("MODULO 5:  Desarrollo al ejecutar y revisar el archivo")
+
+###### DATA ANALYSIS WITH PYTHON
 print("MODULO 1: IBM Semana 4")
 print("MODULO 2 IBM: Semana 5: Data Analysis with Python (IBM)")
+print("MODULO 3 IBM: Semana 6: Data Analysis with Python (IBM)")
 
 # checando modulo DATA ANALYSIS WITH PYTHON
 # Le llamaré modulo 6
@@ -18,13 +21,74 @@ import pandas as pd
 import os
 
 ### 
-### DATA PROCESSING MODULO 2 IBM 
+### DATA PROCESSING MODULO 3 IBM 
 ###
-### Semana 5: Data Analysis with Python (IBM)
+### Semana 6: Data Analysis with Python (IBM)
 ###
-modulo = 6
+### Si desea revisarse el código anterior, coloque el valor
+### valor a la variable de la siguiente manera:
+###
+### DATA ANALYSIS WITH PYTHON
+### MODULO 1
+### modulo = 5
 
-if modulo >= 6:
+### MODULO 2
+### modulo = 6
+
+### MODULO 3 
+### modulo = 7
+modulo = 7
+
+if modulo == 7:
+# Importar las librerias
+
+    import matplotlib.pyplot as plt    
+
+    # Dataset para trabajarlo
+    url='https://raw.githubusercontent.com/tec03/Datasets/main/datasets/Cereals.csv'
+    cereals_df = pd.read_csv(url)
+
+    # Trabajaremos sobre un DataFrame de copia para no tocar los datos originales
+    df = cereals_df.copy()
+
+    # Iniciamos la transformación
+    # Limpiar los valores vacíos, PCA necesita tener los datos limpios
+    df.dropna(axis=0, inplace=True)
+    print(df.head())
+    
+    # Describe la cantidad, average, quartiles
+    print(df.describe())
+
+    # Tomando el listado anterior, vemos que con el índice de la primera column
+    # podemos determinar que desde la 3 en adelante son númericas.  Así que generemos
+    # un nuevo Dataframe con los datos numéricos.
+    df_num = df.iloc[:,3:]
+
+    # Muestranos las columnas seleccionadas
+    print(df_num.head())
+
+    # chequemos las variables y sus correlaciones 
+    # con un mapa de correlacion
+    # librería para realizar el mapa de calor
+    import seaborn as sns
+
+    # correlación de nuestra información
+    corrs = df_num.corr()
+    
+    # impresión de la matriz de correlacion de todas 
+    # las variables numéricas.
+    print(corrs)
+
+    # configurar el tipo de imagen
+    sns.set(rc = {'figure.figsize':(12,10)})
+    g = sns.heatmap(corrs, vmin = -1, vmax = 1, cmap = "BuGn", annot = True)
+
+    # imprimir el heat map in python
+    g.set_xticklabels(g.get_xticklabels(), fontsize = 7)
+    g.set_yticklabels(g.get_yticklabels(), rotation = 0, fontsize = 7)
+    plt.show()
+
+elif modulo >= 6:
     # Importando Data 
     # # Cargamos el archivo que está en la siguiente carpeta de Google-Colab:
     misdatos = pd.read_csv("cereals.csv")
