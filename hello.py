@@ -37,6 +37,8 @@ import os
 
 ### MODULO 3 
 ### modulo = 7
+### DESARROLLO DE EJERCICIO CON EL BLEDGE
+### YA OBTENIDO!!!!
 modulo = 7
 
 if modulo == 7:
