@@ -41,6 +41,13 @@ import os
 ### YA OBTENIDO!!!!
 modulo = 7
 
+C_range = 10. ** np.arange(-1, 4)
+gamma_range = 10. ** np.arange(-2, 3)
+print(C_range)
+print("otro:")
+print(gamma_range)
+input("enter")
+
 if modulo == 7:
 # Importar las librerias
 
